@@ -46,11 +46,7 @@ public class Util  {
         }
         else {
             byte[] buf = new byte[32];
-            int ptr = 31;
-            for(int i = 0; i < b.length; i++) {
-                buf[ptr] = b[i];
-                ptr--;
-            }
+            System.arraycopy(b, 0, buf, buf.length - b.length, b.length);
             return buf;
         }
     }
